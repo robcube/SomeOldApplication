@@ -54,6 +54,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -72,9 +75,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="scripts\firstscript.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="scripts\secondscript.py" />
+    <None Include="scripts\thirdscript.py" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SomeOldApplication.PyUtility\SomeOldApplication.PyUtility.csproj">
+      <Project>{CD8AB8A0-6A8F-438E-9AF9-5C9043468590}</Project>
+      <Name>SomeOldApplication.PyUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SomeOldApplication.ScriptingService\SomeOldApplication.ScriptingService.csproj">
+      <Project>{499d4972-cfb9-4e7e-b839-23c474dd7944}</Project>
+      <Name>SomeOldApplication.ScriptingService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
